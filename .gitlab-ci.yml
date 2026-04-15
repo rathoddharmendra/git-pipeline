@@ -17,7 +17,7 @@ pre-tasks:
 build_artifact:
   stage: build
   script:
-    - mkdir build && cd build && uname >>  artifact.txt && cat /etc/os-release* >> artifact.txt; cat artifact.txt
+    - mkdir build && cd build && echo "$(uname) - $(whoami)" >>  artifact.txt && cat /etc/os-release* >> artifact.txt; cat artifact.txt
     - echo "Artifact created successfully"
     - echo "Uploading artifact to docker registry..."
     - echo "Successfully created artifact and uploaded to docker registry"
