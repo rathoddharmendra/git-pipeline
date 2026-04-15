@@ -1,0 +1,25 @@
+events:
+  jobId: AA3464B-1234-5678-90AB-CDEF12345678,
+  steps:
+    - step: 1,
+      totalSteps: 5,
+      message: Connecting to NAS server,
+      status: running
+    - step: 2,
+      totalSteps: 5,
+      message: Setting up UNIX file permissions,
+      status: running
+    - step: 3,
+      totalSteps: 5,
+      message: Provisioning NAS volume,
+      status: running
+    - step: 4,
+      totalSteps: 5,
+      message: Provisioning NAS export share,
+      status: running
+    - step: 5,
+      totalSteps: 5,
+      message: Exporting NAS Share,
+      status: completed
+  eventType: build_nas_share,
+  timestamp: 2024-06-15T12:34:56Z
