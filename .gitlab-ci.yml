@@ -25,4 +25,4 @@ build_artifact:
     paths:
       - build/artifact.txt
     expire_in: 1 hour
-  whenn: manual
+  when: manual
