@@ -21,3 +21,8 @@ build_artifact:
     - echo "Artifact created successfully"
     - echo "Uploading artifact to docker registry..."
     - echo "Successfully created artifact and uploaded to docker registry"
+  artifacts:
+    paths:
+      - build/artifact.txt
+    expire_in: 1 hour
+  whenn: manual

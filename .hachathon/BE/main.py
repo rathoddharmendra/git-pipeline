@@ -4,6 +4,8 @@ Mimicing events to UI - for real time NAS provisioning on Isilon
 """
 
 from fastapi import FastAPI, WebSocket
+from fastapi.responses import HTMLResponse
+
 import yaml
 from pathlib import Path
 import asyncio
@@ -21,6 +23,19 @@ for step in data["events"]["steps"]:
 
 app = FastAPI()
 
+@app.get("/")
+async def root():
+    return {"message": "Hello World"}
+
+
+# @app.websocket("/ws")
+# async def websocket_endpoint(websocket: WebSocket):
+#     await websocket.accept()
+#     while True:
+#         data = await websocket.receive_text()
+#         await websocket.send_text(f"Message text was: {data}")
+
+
 @app.websocket("/ws")
 async def websocket_endpoint(websocket: WebSocket):
     await websocket.accept()
@@ -30,7 +45,7 @@ async def websocket_endpoint(websocket: WebSocket):
 
     await websocket.send_text("Provision request received. Starting NAS provision flow.")
     for step in data["events"]["steps"]:
-        await asyncio.sleep(10)
+        await asyncio.sleep(5)
         print(f"Sending step: {step}")
         await websocket.send_json(step)
 

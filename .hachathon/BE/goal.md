@@ -21,3 +21,9 @@ Goal extension:
 
 
     - I am going to copy, use AI, and read docs -- but complete this project with self control and architect it my design, without loosing control.
+
+
+Notes:
+
+- python3 -m http.server 8000 --directory /path/to/folder # where html files live
+- fastapi dev # to start the fastapi server in dev
