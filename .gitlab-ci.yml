@@ -13,3 +13,8 @@ pre-tasks:
     - echo "which simulates a test that runs 20 seconds longer than test-job1"
     - sleep 20
   when: manual
+
+build_artifact:
+  stage: build
+  script:
+    - echo "Successfully created artifact and uploaded to docker registry"
